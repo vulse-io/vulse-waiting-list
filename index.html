@@ -16,7 +16,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f8fafc;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
             color: #000;
             line-height: 1.6;
             min-height: 100vh;
@@ -28,7 +28,8 @@
         .navbar {
             position: sticky;
             top: 0;
-            background-color: #f8fafc;
+            background: linear-gradient(180deg, rgba(248, 250, 252, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%);
+            backdrop-filter: blur(10px);
             padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
@@ -47,20 +48,21 @@
         }
 
         .btn-early-access {
-            background-color: #000;
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
             color: #f8fafc;
             padding: 0.75rem 1.5rem;
             border: none;
             font-size: 0.9rem;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            transition: opacity 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .btn-early-access:hover {
-            opacity: 0.8;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            transform: translateY(-1px);
         }
 
         /* Hero Section */
@@ -79,26 +81,31 @@
         .coming-soon-badge {
             display: inline-block;
             padding: 0.5rem 1rem;
-            background-color: rgba(255, 107, 53, 0.1);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(255, 107, 53, 0.08) 100%);
             color: #ff6b35;
             font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
+            font-weight: 700;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
             margin-bottom: 2rem;
+            border-radius: 4px;
         }
 
         .headline {
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #000 0%, #374151 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .subtitle {
-            font-size: 1.1rem;
-            color: #4a5568;
+        .value-prop {
+            font-size: 1rem;
+            color: #6b7280;
             margin-bottom: 3rem;
             font-weight: 400;
         }
@@ -134,18 +141,23 @@
 
         .submit-btn {
             padding: 0.875rem 1.5rem;
-            background-color: #000;
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
             color: #f8fafc;
             border: none;
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             white-space: nowrap;
-            transition: opacity 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .submit-btn:hover {
-            opacity: 0.8;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            transform: translateY(-1px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
         }
 
         .form-message {
@@ -187,6 +199,12 @@
             color: #000;
         }
 
+        .location {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+        }
+
         .copyright {
             font-size: 0.8rem;
             color: #9ca3af;
@@ -212,11 +230,11 @@
             }
 
             .headline {
-                font-size: 2rem;
+                font-size: 2.25rem;
             }
 
-            .subtitle {
-                font-size: 1rem;
+            .value-prop {
+                font-size: 0.95rem;
             }
 
             .form-group {
@@ -244,8 +262,8 @@
     <!-- Hero Section -->
     <main class="hero">
         <span class="coming-soon-badge">Coming Soon</span>
-        <h1 class="headline">Connecting influencers with brands</h1>
-        <p class="subtitle">Join the waitlist to be notified when we launch</p>
+        <h1 class="headline">The future of influencer-brand partnerships</h1>
+        <p class="value-prop">Join thousands of influencers and brands ready to transform how partnerships work</p>
         <form class="waitlist-form" id="waitlist-form">
             <div class="form-group">
                 <input 
@@ -255,7 +273,7 @@
                     required
                     id="email-input"
                 >
-                <button type="submit" class="submit-btn">Notify Me</button>
+                <button type="submit" class="submit-btn">Get Early Access</button>
             </div>
             <div class="form-message" id="form-message"></div>
         </form>
@@ -268,7 +286,8 @@
             <a href="https://www.instagram.com/vulse.io/" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
             <a href="mailto:hello@vulse.io" class="social-link">Email</a>
         </div>
-        <p class="copyright">&copy; 2026 Vulse. All rights reserved.</p>
+        <p class="location">Turin, Italy</p>
+        <p class="copyright">&copy; 2026 Vulse.io. All rights reserved.</p>
     </footer>
 
     <script>
@@ -291,7 +310,7 @@
             }
 
             // Simulate form submission
-            messageDiv.textContent = 'Thank you! We\'ll notify you when we launch.';
+            messageDiv.textContent = 'You\'re in! We\'ll notify you as soon as we launch.';
             messageDiv.className = 'form-message success';
             emailInput.value = '';
 
