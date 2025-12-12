@@ -1,1 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulse - Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #000;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #f8fafc;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #000;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .btn-early-access {
+            background-color: #000;
+            color: #f8fafc;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn-early-access:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: rgba(255, 107, 53, 0.1);
+            color: #ff6b35;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .headline {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .waitlist-form {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 0.875rem 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            font-size: 0.95rem;
+            color: #000;
+        }
+
+        .email-input:focus {
+            outline: none;
+            border-color: #000;
+        }
+
+        .email-input::placeholder {
+            color: #9ca3af;
+        }
+
+        .submit-btn {
+            padding: 0.875rem 1.5rem;
+            background-color: #000;
+            color: #f8fafc;
+            border: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: opacity 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.8;
+        }
+
+        .form-message {
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            min-height: 1.5rem;
+        }
+
+        .form-message.success {
+            color: #059669;
+        }
+
+        .form-message.error {
+            color: #dc2626;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-link {
+            color: #4a5568;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .social-link:hover {
+            color: #000;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: #9ca3af;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.25rem;
+            }
+
+            .btn-early-access {
+                padding: 0.625rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .headline {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .form-group {
+                flex-direction: column;
+            }
+
+            .submit-btn {
+                width: 100%;
+            }
+
+            .social-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="logo">vulse.</a>
+        <a href="#waitlist" class="btn-early-access">Get Early Access</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <span class="coming-soon-badge">Coming Soon</span>
+        <h1 class="headline">Connecting influencers with brands</h1>
+        <p class="subtitle">Join the waitlist to be notified when we launch</p>
+        <form class="waitlist-form" id="waitlist-form">
+            <div class="form-group">
+                <input 
+                    type="email" 
+                    class="email-input" 
+                    placeholder="Enter your email"
+                    required
+                    id="email-input"
+                >
+                <button type="submit" class="submit-btn">Notify Me</button>
+            </div>
+            <div class="form-message" id="form-message"></div>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.linkedin.com/company/vulse-io/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+            <a href="https://www.instagram.com/vulse.io/" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+            <a href="mailto:hello@vulse.io" class="social-link">Email</a>
+        </div>
+        <p class="copyright">&copy; 2024 Vulse.io. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('waitlist-form');
+        const emailInput = document.getElementById('email-input');
+        const messageDiv = document.getElementById('form-message');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = emailInput.value.trim();
+            messageDiv.textContent = '';
+            messageDiv.className = 'form-message';
+
+            // Basic email validation
+            if (!email || !email.includes('@')) {
+                messageDiv.textContent = 'Please enter a valid email address.';
+                messageDiv.className = 'form-message error';
+                return;
+            }
+
+            // Simulate form submission
+            messageDiv.textContent = 'Thank you! We\'ll notify you when we launch.';
+            messageDiv.className = 'form-message success';
+            emailInput.value = '';
+
+            // In a real implementation, you would send this to your backend
+            // fetch('/api/waitlist', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ email: email })
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     messageDiv.textContent = 'Thank you! We\'ll notify you when we launch.';
+            //     messageDiv.className = 'form-message success';
+            //     emailInput.value = '';
+            // })
+            // .catch(error => {
+            //     messageDiv.textContent = 'Something went wrong. Please try again.';
+            //     messageDiv.className = 'form-message error';
+            // });
+        });
+
+        // Smooth scroll for "Get Early Access" button
+        document.querySelector('.btn-early-access').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('waitlist-form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            emailInput.focus();
+        });
+    </script>
+</body>
+</html>
